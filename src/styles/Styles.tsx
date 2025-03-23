@@ -1,11 +1,28 @@
 import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
-  mesa: {
+  container: {
     width: '100%',
     height: '100%',
+  },
+  hand: {
+    width: '100%',
+    height: '30%',
+    display: 'flex',           // No necesario en RN, pero se incluye para web
+    alignItems: 'center',
+    justifyContent: 'center',
+    zIndex: 0,
+    backgroundColor: 'yellow',
+  },
+  mesa: {
+    width: '100%',
+    height: '40%',
     display: 'flex',
     flexDirection: 'row',
+  },
+  deckContainer: {
+    width: '100%',
+    height: '100%',
   },
   deck: {
     display: 'flex',           // No necesario en RN, pero se incluye para web

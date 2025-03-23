@@ -4,6 +4,7 @@
     "slug": "cards-app",
     "version": "1.0.0",
     "orientation": "portrait",
+    "scheme": "cards-app-scheme",
     "icon": "./src/assets/images/icon.png",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,

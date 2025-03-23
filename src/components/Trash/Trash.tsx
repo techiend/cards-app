@@ -2,6 +2,7 @@ import React, { ForwardedRef, forwardRef, useEffect } from 'react'
 import { useSprings, animated, to as interpolate } from '@react-spring/web'
 import { View } from 'react-native';
 import styles from '@/styles/Styles';
+import { Card } from '@/types/Card';
 
 // import styles from './styles.module.css'
 // import commonStyles from '../../styles.module.css';
@@ -25,7 +26,7 @@ const trans = (r: number) =>
   `rotateX(30deg) rotateY(${r / 10}deg) rotateZ(${r}deg)`;
 
 type TrashProps = {
-  trash: string[],
+  trash: Card[],
 };
 
 const Trash = forwardRef(({trash}: TrashProps, ref: ForwardedRef) => {
@@ -44,7 +45,7 @@ const Trash = forwardRef(({trash}: TrashProps, ref: ForwardedRef) => {
   }, [trash])
 
   return (
-    <div ref={ref} style={styles.basura}>
+    <View ref={ref} style={styles.basura}>
       {props.map(({ rot, x }, i) => (
         <animated.div
           key={i}
@@ -52,11 +53,11 @@ const Trash = forwardRef(({trash}: TrashProps, ref: ForwardedRef) => {
             ...styles.card,
             x,
             transform: interpolate([rot], trans),
-            backgroundImage: `url(${trash[i]})`,
+            backgroundImage: `url(${trash[i].img})`,
           }}
         />
       ))}
-    </div>
+    </View>
   )
 });
 
